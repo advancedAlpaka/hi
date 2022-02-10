@@ -1,0 +1,52 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           hw3
+version:        0.1.0.0
+license:        GPL-3
+license-file:   LICENSE
+build-type:     Simple
+
+library
+  exposed-modules:
+      HW3.Action
+      HW3.Base
+      HW3.Evaluator
+      HW3.Parser
+      HW3.Pretty
+  other-modules:
+      Paths_hw3
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , containers
+    , directory
+    , haskeline >=0.8.1.2
+    , megaparsec
+    , mtl
+    , parser-combinators
+    , prettyprinter
+    , prettyprinter-ansi-terminal
+    , scientific
+    , serialise
+    , text
+    , zlib
+  default-language: Haskell2010
+
+executable hi
+  main-is: Main.hs
+  other-modules:
+      Paths_hw3
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , haskeline >=0.8.1.2
+    , hw3
+  default-language: Haskell2010
